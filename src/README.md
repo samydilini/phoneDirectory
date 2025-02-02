@@ -1,0 +1,1 @@
+You must accept the terms of legal notice of the beta Java specification to enable support for "X - Experimental features".
