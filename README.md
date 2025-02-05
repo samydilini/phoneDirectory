@@ -14,11 +14,19 @@
     * Database Management: Using Docker to run a database ensures consistency and isolation, making it easier to manage and scale the database alongside the application.
 * env file - to store environment variables. I have put one .env file. However, this is easily extendable to multiple env files. for different environments eg. .env.integrationTest, .env.dev, .env.prod etc.
 * postgres - for database to store phone directory. Right now same database is getting used for integration testing and application. 
+           There are two tables added. Customer and create table phone
+  For demonstration purposes Customer will have address as a column. To show how personal unnecessary data are not returned to the end user. However. in real world scenario, we would have a separate table for address.
 * flyway - for database migration.
+* lambok - for JPA entity generation. All other models are records
 
 OpenAPI documentation can be accessed at.
 http://localhost:8081/swagger-ui/index.html
 You must accept the terms of legal notice of the beta Java specification to enable support for "X - Experimental features".
+
+There will be three endpoints.
+• get all phone numbers - this will return all phone numbers with the customer name and id in the system
+• get all phone numbers of a single customer
+• activate a phone number
 
 
 Assumptions:
