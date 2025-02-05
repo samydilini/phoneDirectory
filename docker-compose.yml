@@ -1,0 +1,32 @@
+
+services:
+  spring-app:
+    build:
+      context: .
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    environment:
+      - SERVER_PORT= 8081
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:${DB_PORT}/${POSTGRES_DB}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+    depends_on:
+      - db
+
+  db:
+    image: postgres:${POSTGRES_VERSION}
+    restart: always
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+
+volumes:
+  postgres_data:
+

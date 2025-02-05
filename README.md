@@ -2,6 +2,7 @@
 
 * Java 23
 * gradle 8.12.1
+* OpenAPI - for API documentation.
 * Docker - there are several reasons to use docker instead of just running it with spring boot run. Main one being introducing a database to save phone directory.    
        Some benefits of using docker are:
                
@@ -11,6 +12,36 @@
     * Scalability: Docker makes it easier to scale applications horizontally by running multiple instances of the application in separate containers.  
     * Simplified Deployment: Docker simplifies the deployment process by providing a consistent environment and reducing the need for complex setup scripts.  
     * Database Management: Using Docker to run a database ensures consistency and isolation, making it easier to manage and scale the database alongside the application.
-* scsdcsd
+* env file - to store environment variables. I have put one .env file. However, this is easily extendable to multiple env files. for different environments eg. .env.integrationTest, .env.dev, .env.prod etc.
+* postgres - for database to store phone directory. Right now same database is getting used for integration testing and application. 
+* flyway - for database migration.
 
+OpenAPI documentation can be accessed at.
+http://localhost:8081/swagger-ui/index.html
 You must accept the terms of legal notice of the beta Java specification to enable support for "X - Experimental features".
+
+
+Assumptions:
+* Phone numbers will only include digits.
+
+`./gradlew build`
+
+Docker
+
+-build
+`docker-compose build`
+
+-start
+`docker-compose up --build`
+
+-remove
+`docker-compose down`
+or
+`docker-compose down --rmi all`
+or
+`docker-compose down --rmi all --volumes`
+
+other supportive commands
+docker volume prune -f
+docker network prune -f  
+
