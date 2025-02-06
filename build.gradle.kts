@@ -26,12 +26,16 @@ dependencies {
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.4")
 	implementation("org.flywaydb:flyway-core:9.22.3")
 	implementation("org.postgresql:postgresql:42.7.3")
+	implementation("org.hibernate.validator:hibernate-validator:8.0.0.Final")
+	implementation("jakarta.validation:jakarta.validation-api:3.0.2")
 
 	compileOnly("org.projectlombok:lombok:1.18.34")
 	annotationProcessor("org.projectlombok:lombok:1.18.34")
 
+	testImplementation("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
 tasks.withType<Test> {

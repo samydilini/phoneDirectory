@@ -18,6 +18,7 @@
   For demonstration purposes Customer will have address as a column. To show how personal unnecessary data are not returned to the end user. However. in real world scenario, we would have a separate table for address.
 * flyway - for database migration.
 * lambok - for JPA entity generation. All other models are records
+* Jakarta Bean Validation - for validation of request body.
 
 OpenAPI documentation can be accessed at.
 http://localhost:8081/swagger-ui/index.html

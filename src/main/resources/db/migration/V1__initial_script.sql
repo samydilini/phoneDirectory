@@ -9,7 +9,7 @@ create table customer (
 
 create table phone (
 	id uuid not null default uuid_generate_v4() primary key,
-	phone_number bigint not null,
+	phone_number varchar (10) not null,
 	customer_id uuid not null,
 	status boolean default false,
     last_updated timestamp not null default now(),

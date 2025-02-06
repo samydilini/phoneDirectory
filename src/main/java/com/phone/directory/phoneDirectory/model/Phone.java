@@ -19,7 +19,7 @@ public class Phone {
     private UUID id;
 
     @Column(name = "phoneNumber")
-    private Long phoneNumber;
+    private String phoneNumber;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
@@ -32,11 +32,15 @@ public class Phone {
     @Column(name = "last_updated")
     private Date lastUpdated;
 
-    public Phone(UUID id, Long phoneNumber, Customer customer, Boolean status, Date lastUpdated) {
+    public Phone(UUID id, String phoneNumber, Customer customer, Boolean status, Date lastUpdated) {
         this.id = id;
         this.phoneNumber = phoneNumber;
         this.customer = customer;
         this.status = status;
         this.lastUpdated = lastUpdated;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

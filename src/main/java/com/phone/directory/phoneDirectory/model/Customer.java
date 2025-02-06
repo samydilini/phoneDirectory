@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -19,6 +21,8 @@ public class Customer {
     private String surname;
     private String title;
     private String address;
+    @OneToMany(mappedBy = "customer")
+    private List<Phone> phoneNumbers;
 
     public Customer(UUID id, String firstName, String surname, String title, String address) {
         this.id = id;
@@ -26,5 +30,12 @@ public class Customer {
         this.surname = surname;
         this.title = title;
         this.address = address;
+    }
+
+    public void setPhoneNumbers(List<Phone> phones) {
+        if(this.phoneNumbers == null || this.phoneNumbers.isEmpty()){
+            this.phoneNumbers = new ArrayList<>();
+        }
+        this.phoneNumbers.addAll(phones);
     }
 }
