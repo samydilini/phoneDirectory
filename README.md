@@ -56,6 +56,39 @@ remove all containers<br/>
 `docker volume prune -f`<br/>
 `docker network prune -f`<br/>
 
+### Some code practices followed in this project:  
+1.  Exception Handling:  
+Custom exceptions like CustomerNotFoundException and PhoneNumberNotFoundException are used to handle specific error scenarios.
+2.  Logging:  
+SLF4J Logger is used for logging important information and debugging purposes.
+3. Validation:  
+Jakarta Bean Validation annotations like @NotBlank and @Pattern are used to validate request parameters.
+4. Dependency Injection:  
+Spring's @Autowired annotation is used for injecting dependencies.
+5. API Documentation:  
+OpenAPI annotations like @Operation and @ApiResponses are used to document the API endpoints.
+6. Service Layer:  
+Business logic is separated into a service layer (PhoneNumberService).
+7. Repository Layer:  
+Data access is handled through repository interfaces (CustomerRepository and PhoneRepository).
+8. Integration Testing:  
+H2 in-memory database is used for integration testing.
+mockMvc is used for performing HTTP requests in tests.
+9. Database Migration:  
+Flyway is used for managing database migrations.
+10. Environment Configuration:  
+Environment variables are managed using .env files.
+11. Containerization:  
+Docker is used for containerizing the application and its dependencies.
+12. Build and Dependency Management:  
+Gradle is used for building the project and managing dependencies.
+13. Code Documentation:  
+Javadoc comments are used to document classes and methods.
+14. Immutability:  
+Records are used for immutable data models.
+15. Consistent Code Style:
+Consistent naming conventions and code formatting are followed throughout the project.
+
 
 
 
