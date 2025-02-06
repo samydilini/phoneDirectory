@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
+/**
+ * Repository class to handle the database operations for customers.
+ */
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, UUID> {
 }

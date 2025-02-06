@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Entity class to represent the customer details.
+ */
 @Entity
 @Table(name = "customer", schema = "my_schema")
 @Getter

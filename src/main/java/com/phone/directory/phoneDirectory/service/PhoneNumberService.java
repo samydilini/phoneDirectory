@@ -17,6 +17,9 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.StreamSupport;
 
+/**
+ * Service class to handle the business logic for phone number related operations.
+ */
 @Service
 public class PhoneNumberService {
 
@@ -32,6 +35,13 @@ public class PhoneNumberService {
         return StreamSupport.stream(phones.spliterator(), false).map(phone -> new CustomerPhoneNumberResponse(phone.getPhoneNumber(), phone.getCustomer().getFirstName(), phone.getCustomer().getId().toString())).toList();
     }
 
+    /**
+     * Method to get the phone numbers for a customer
+     *
+     * @param customerId the customer Id
+     * @return the list of phone numbers for the customer
+     * @throws CustomerNotFoundException if the customer is not found
+     */
     public List<PhoneNumberResponse> customerPhoneNumbers(UUID customerId) throws CustomerNotFoundException {
         Customer customer = customerRepository.findById(customerId)
                 .orElseThrow(() -> new CustomerNotFoundException("Customer for the Id " + customerId + " not found"));
@@ -41,6 +51,12 @@ public class PhoneNumberService {
                 .toList();
     }
 
+    /**
+     * Method to activate a phone number
+     *
+     * @param uuid the phone number Id
+     * @throws PhoneNumberNotFoundException if the phone number is not found
+     */
     public void activatePhoneNumber(UUID uuid) throws PhoneNumberNotFoundException {
         Phone phone = phoneRepository.findById(uuid)
                 .orElseThrow(() -> new PhoneNumberNotFoundException("Phone number for the Id " + uuid + " not found"));

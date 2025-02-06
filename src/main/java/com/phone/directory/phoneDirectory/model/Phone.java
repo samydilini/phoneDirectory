@@ -8,7 +8,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.sql.Date;
 import java.util.UUID;
 
-
+/**
+ * Entity class to represent the phone numbers.
+ */
 @Entity
 @Table(name = "phone", schema = "my_schema")
 @Getter

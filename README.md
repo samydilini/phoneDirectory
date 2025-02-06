@@ -1,4 +1,11 @@
-# Technologies used
+# Problem Statement
+The application is a phone directory system used to test introduction of some endpoints. It will have the following features:
+Three endpoints.
+• get all phone numbers - this will return all phone numbers with the customer name and id in the system
+• get all phone numbers of a single customer - this will return all phone numbers with the status and phone number ID of a single customer. 
+• activate a phone number - this will activate a phone number. 
+
+### Technologies used
 
 * Java 23
 * gradle 8.12.1
@@ -19,38 +26,38 @@
 * flyway - for database migration.
 * lambok - for JPA entity generation. All other models are records
 * Jakarta Bean Validation - for validation of request body.
+* h2 - for in memory database for integration testing. you don't need docker to run integration tests.
 
-OpenAPI documentation can be accessed at.
-http://localhost:8081/swagger-ui/index.html
-You must accept the terms of legal notice of the beta Java specification to enable support for "X - Experimental features".
-
-There will be three endpoints.
-• get all phone numbers - this will return all phone numbers with the customer name and id in the system
-• get all phone numbers of a single customer
-• activate a phone number
-
-
-Assumptions:
-* Phone numbers will only include digits.
-
+### How to run the application
+#### Build
 `./gradlew build`
+#### How to run the unit tests and integration tests
+`./gradlew test`
+#### Run the application
 
-Docker
-
--build
-`docker-compose build`
-
--start
+-start<br/>
 `docker-compose up --build`
 
--remove
-`docker-compose down`
-or
-`docker-compose down --rmi all`
-or
-`docker-compose down --rmi all --volumes`
+### How to access the application
+The endpoints developed by application are exposed via OPENAPI. 
+OpenAPI documentation can be accessed at.
+http://localhost:8081/swagger-ui/index.html
 
-other supportive commands
-docker volume prune -f
-docker network prune -f  
+#### Some usefull docker commands
+
+remove<br/>
+`docker-compose down`<br/>
+or<br/>
+`docker-compose down --rmi all`<br/>
+or<br/>
+`docker-compose down --rmi all --volumes`<br/>
+
+remove all containers<br/>
+`docker volume prune -f`<br/>
+`docker network prune -f`<br/>
+
+
+
+
+
 

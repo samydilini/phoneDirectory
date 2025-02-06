@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Global exception handler class to handle the exceptions thrown in the application.
+ */
 @ControllerAdvice
 public class GlobalExceptionHandler {
 

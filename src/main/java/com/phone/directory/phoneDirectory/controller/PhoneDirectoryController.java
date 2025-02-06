@@ -24,6 +24,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Controller class to handle the phone number related operations.
+ */
 @RestController
 @Validated
 public class PhoneDirectoryController {
