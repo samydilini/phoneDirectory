@@ -56,7 +56,7 @@ remove all containers<br/>
 `docker volume prune -f`<br/>
 `docker network prune -f`<br/>
 
-### Some code practices followed in this project:  
+### Some coding practices followed in this project:  
 1.  Exception Handling:  
 Custom exceptions like CustomerNotFoundException and PhoneNumberNotFoundException are used to handle specific error scenarios.
 2.  Logging:  
